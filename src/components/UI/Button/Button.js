@@ -5,7 +5,7 @@ const Button = (props) => {
   // Define state to hold the data
   const [btnData, setBtnData] = useState(null);
   
-  return <button className={classes.button}>{props.text}</button>;
+  return <button className={classes.button} {...props}>{props.text}</button>;
 };
 
 export default Button;

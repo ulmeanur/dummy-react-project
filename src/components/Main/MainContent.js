@@ -17,16 +17,16 @@ const MainContent = () => {
         // Set loading state to true when fetching starts
         setLoading(true);
         // Fetch data from an API endpoint
-        // "https://jsonplaceholder.typicode.com/posts"
+
         const response = await fetch(
-        "https://storeposts-dd9ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json"
+          "https://storeposts-dd9ae-default-rtdb.europe-west1.firebasedatabase.app/posts.json"
         );
+
         // Convert response to JSON format
         const jsonData = await response.json();
 
         // Convert the object data into an array
         const formattedData = jsonData ? Object.values(jsonData) : [];
-
 
         // Update state with the fetched data
         setJsonData(formattedData);
@@ -46,11 +46,8 @@ const MainContent = () => {
 
   return (
     <div className={classes.container}>
-      <h2>Main Content</h2>
-      <pre>
-        {/*
-            JSON.stringify(jsonData, null, 2) */}
-      </pre>
+      <h2>Main Content - List Last Posts</h2>
+
       {weHaveData ? (
         <ul>
           {jsonData.slice(95, 105).map((item, index) => (
@@ -64,9 +61,8 @@ const MainContent = () => {
         <p>No data available.... or Loading</p>
       )}
 
-      <Button text="Click me !" />
-
       <Card>
+        <h2>Add new entries</h2>
         <AddItemsForm />
       </Card>
     </div>
