@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple WYSIWYG Editor</title>
+    <style>
+        .sidebar {
+            width: 200px;
+            float: left;
+        }
+        .preview {
+            margin-left: 220px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .element {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="WYSIWYGEditor.addElement('h1')">Add H1</button>
+        <button onclick="WYSIWYGEditor.addElement('p')">Add Paragraph</button>
+        <button onclick="WYSIWYGEditor.addElement('img')">Add Image</button>
+    </div>
+    <div class="preview" id="preview">
+        <!-- Elements will be added here -->
+    </div>
+
+    <script src="/simpleWebsiteBuilder.js"></script>
+</body>
+</html>
